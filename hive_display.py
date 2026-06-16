@@ -4,7 +4,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 # Waveshare library path
-sys.path.append("/home/pi/e-Paper/RaspberryPi_JetsonNano/python/lib")
+sys.path.append("/home/bee/pi/e-Paper/RaspberryPi_JetsonNano/python/lib")
 
 from waveshare_epd import epd2in13_V4
 
