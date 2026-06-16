@@ -13,10 +13,10 @@ from waveshare_epd import epd2in13_V4
 def display_hive_data(
     left_temp_f,
     left_humidity,
-    left_weight_lb,
+    left_weight_kg,
     right_temp_f,
     right_humidity,
-    right_weight_lb,
+    right_weight_kg,
     external_temp_f,
     external_humidity,
     timestamp=None,
@@ -35,13 +35,13 @@ def display_hive_data(
         draw = ImageDraw.Draw(image)
 
         font_title = ImageFont.truetype(
-            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 14
+            "/usr/share/fonts/truetype/ibm-plex/IBMPlexMono-Bold.ttf",  14
         )
         font = ImageFont.truetype(
-            "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 12
+            "/usr/share/fonts/truetype/ibm-plex/IBMPlexMono-Regular.ttf",  12
         )
         font_small = ImageFont.truetype(
-            "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 10
+            "/usr/share/fonts/truetype/ibm-plex/IBMPlexMono-Regular.ttf", 10
         )
 
         mid_x = width // 2
@@ -67,12 +67,12 @@ def display_hive_data(
         # Left column
         draw.text((6, 30), f"T: {left_temp_f:.1f} F", font=font, fill=0)
         draw.text((6, 50), f"H: {left_humidity:.1f} %", font=font, fill=0)
-        draw.text((6, 70), f"W: {left_weight_lb:.2f} lb", font=font, fill=0)
+        draw.text((6, 70), f"W: {left_weight_kg:.2f} kg", font=font, fill=0)
 
         # Right column
         draw.text((mid_x + 6, 30), f"T: {right_temp_f:.1f} F", font=font, fill=0)
         draw.text((mid_x + 6, 50), f"H: {right_humidity:.1f} %", font=font, fill=0)
-        draw.text((mid_x + 6, 70), f"W: {right_weight_lb:.2f} lb", font=font, fill=0)
+        draw.text((mid_x + 6, 70), f"W: {right_weight_kg:.2f} kg", font=font, fill=0)
 
         # Bottom external row
         draw.text(
@@ -102,11 +102,11 @@ if __name__ == "__main__":
     display_hive_data(
         left_temp_f=74.2,
         left_humidity=58.0,
-        left_weight_lb=121.35,
+        left_weight_kg=58.35,
 
         right_temp_f=73.8,
         right_humidity=60.5,
-        right_weight_lb=119.80,
+        right_weight_kg=42.80,
 
         external_temp_f=70.1,
         external_humidity=65.2,
